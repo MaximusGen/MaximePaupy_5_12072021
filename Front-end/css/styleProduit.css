@@ -1,0 +1,173 @@
+body {
+  margin: 0 auto;
+  padding: 0;
+  max-height: 1080px;
+  max-width: 1920px;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+p {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+/***************** HEADER *****************/
+
+.header-bar,
+.section-menu,
+.footer-bar {
+  background-color: #353535;
+}
+
+.header-bar {
+  width: 100%;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.header-menu {
+  color: #fff;
+}
+
+.header-menu:hover {
+  color: #e918aa;
+  transition: 0.2s ease-out;
+}
+
+.image-header {
+  width: 250px;
+  height: 150px;
+}
+
+/***************** MAIN *****************/
+
+main {
+  height: 900px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.central-image {
+  width: 300px;
+  height: 850px;
+  background-image: url(../img/appareil-produit.jpg);
+  background-size: 100%;
+}
+section {
+  width: 100%;
+  height: 900px;
+}
+.img-produit,
+.description-produit {
+  margin: 0 1.8rem;
+}
+
+#img,
+.description-produit {
+  border: 1px #000 solid;
+}
+
+.description-produit {
+  padding: 3rem 1rem;
+  border-radius: 20px;
+}
+
+.produit {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-flow: row wrap;
+  margin-top: 50px;
+}
+
+#img {
+  width: 600px;
+  height: 600px;
+}
+
+#name-produit {
+  font-size: 1.8rem;
+}
+
+#lenses-produit {
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+#lenses {
+  font-size: 1.1rem;
+  padding: 0.5em;
+  margin: 0 1rem;
+  background-color: ;
+}
+
+#stock-produit {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: rgb(35, 218, 35);
+}
+
+#price-produit {
+  font-weight: normal;
+  margin-bottom: 10rem;
+}
+
+.button-produit {
+  margin: 2rem 5.5rem;
+  padding: 1rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+  cursor: pointer;
+  color: #fff;
+  background-color: #a4508b;
+  background-image: linear-gradient(326deg, #a4508b 0%, #5f0a87 74%);
+  border: #a4508b;
+  border-radius: 10px;
+}
+
+/***************** FOOTER *****************/
+
+.footer-bar {
+  width: 100%;
+  height: 100px;
+}
+
+.logo-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-footer {
+  font-size: 2.5rem;
+  color: #fff;
+  margin: 2rem 2rem;
+}
+
+.icon-footer:hover {
+  color: #e918aa;
+  transition: 0.2s ease-out;
+}

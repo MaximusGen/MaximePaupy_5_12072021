@@ -1,0 +1,162 @@
+@font-face {
+  font-family: "Retro";
+  src: url(Police/RetroSans.ttf);
+}
+
+body {
+  margin: 0 auto;
+  padding: 0;
+  max-height: 1080px;
+  max-width: 1920px;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+p {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.header-bar,
+.section-menu,
+.footer-bar {
+  background-color: #353535;
+}
+/***************** HEADER *****************/
+
+.header-bar {
+  width: 100%;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.header-menu {
+  color: #fff;
+}
+
+.header-menu:hover {
+  color: #e918aa;
+  transition: 0.2s ease-out;
+}
+
+.image-header {
+  width: 250px;
+  height: 150px;
+}
+
+/***************** MAIN *****************/
+
+.central-image,
+.central-image2 {
+  height: 300px;
+}
+
+.central-image {
+  background-image: url(../img/appareil2.jpg);
+  background-size: 100%;
+}
+
+.central-image2 {
+  background-image: url(../img/appareil3.jpg);
+  background-size: 100%;
+}
+
+.title-page {
+  font-size: 2.5rem;
+  color: #000;
+  font-family: "Retro", sans-serif;
+  text-transform: uppercase;
+}
+
+.section-title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+}
+
+#produits {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-flow: row wrap;
+}
+
+#menu-appareil {
+  width: 500px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  margin: 1.8rem 0;
+  border: #000 1px solid;
+  border-radius: 30px;
+  box-shadow: 7px 7px 7px #000;
+  background-color: #fff;
+}
+
+img {
+  width: 498px;
+  height: 300px;
+  border-radius: 30px 30px 0 0;
+}
+h2 {
+  text-align: center;
+}
+
+.section-menu-produits {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+/***************** FOOTER *****************/
+
+.footer-bar {
+  width: 100%;
+  height: 100px;
+}
+
+.logo-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-footer {
+  font-size: 2.5rem;
+  color: #fff;
+  margin: 2rem 2rem;
+}
+
+.icon-footer:hover {
+  color: #e918aa;
+  transition: 0.2s ease-out;
+}
