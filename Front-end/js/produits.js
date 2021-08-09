@@ -1,4 +1,10 @@
 // CHERCHER LES ELEMENTS ET LES DISPLAYS
+const imgElt = document.getElementById("img");
+const h1Elt = document.getElementById("name-produit");
+const priceElt = document.getElementById("price-produit");
+const stockElt = document.getElementById("stock-produit");
+const lensesElt = document.getElementById("lenses");
+const btnElt = document.getElementById("buttonAdd");
 
 (async function () {
   const articleId = getArticleId();
@@ -24,12 +30,6 @@ function getArticles(articleId) {
 }
 
 function hydrateArticle(article) {
-  const imgElt = document.getElementById("img");
-  const h1Elt = document.getElementById("name-produit");
-  const priceElt = document.getElementById("price-produit");
-  const stockElt = document.getElementById("stock-produit");
-  const lensesElt = document.getElementById("lenses");
-
   imgElt.src = `${article.imageUrl}`;
   h1Elt.textContent = `Appareil Photo ${article.name}`;
   priceElt.textContent = `Prix: ${article.price / 100}€`;
@@ -44,17 +44,31 @@ function hydrateArticle(article) {
 
 //  LOCAL STORAGE
 
-const btnElt = document.getElementById("buttonAdd");
-const h1Elt = document.getElementById("name-produit");
+if (localStorage.getItem("userPanier")) {
+  console.log("le panier de l'utilisateur existe dans le localStorage");
+} else {
+  console.log(
+    "Le panier n'existe pas, il va être créer et l'envoyer dans le localStorage"
+  );
 
-let register = {
-  name: getArticles.h1Elt,
-  price: getArticles.price,
+  //Le panier est un tableau de produits
+  let panierInit = [];
+  localStorage.setItem("userPanier", JSON.stringify(panierInit));
+}
+
+//L'user a maintenant un panier
+let userPanier = JSON.parse(localStorage.getItem("userPanier"));
+
+//Au clic de l'user pour mettre le produit dans le panier
+
+addPanier = () => {
+  btnElt.addEventListener("click", function () {
+    const produit = getArticles();
+    userPanier.push(produit);
+    localStorage.setItem("userPanier", JSON.stringify(userPanier));
+    console.log("Administration : le produit a été ajouté au panier");
+    alert("Vous avez ajouté ce produit dans votre panier");
+  });
 };
 
-console.log(register);
-
-btnElt.addEventListener("click", () => {
-  let register = JSON.parse(localStorage.getItem("appareil"));
-  console.log(register);
-});
+addPanier();
