@@ -13,7 +13,6 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;1,100&display=swap"
@@ -21,6 +20,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+
     <script src="https://kit.fontawesome.com/1f38525ba3.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/index.js"></script>
 </head>
@@ -29,25 +33,25 @@
 <body>
 
     <header>
-        <div class="header-bar">
-            <a href="#"><img class="image-header" src="img/logobis1.png"
+        <nav class="nav justify-content-around align-items-center bg-header size-header">
+            <a href="#" class="nav-link text-white"><img class="image-header" src="img/logobis1.png"
                     alt="Logo de Orinoco,site d'e-commerce français"></a>
-            <a href="pages/panier.html">
-                <p class="header-menu">Vôtre Panier <i class="fas fa-shopping-basket"></p></i>
+            <a href="Pages/panier.html" class="nav-link text-white">
+                <p class=" header-menu">Vôtre Panier <i class="fas fa-shopping-basket"></p></i>
             </a>
-        </div>
+        </nav>
     </header>
 
-    <div class="central-image display-image"></div>
+    <div class="bg-image"></div>
 
-    <main id="main">
-        <div class="section-title">
-            <h1 class="title-page">Oriphoto, l'appareil photo vintage de vos rêves</h1>
+    <main id="main" class=" container d-flex flex-column">
+        <div class=" row d-flex justify-content-center align-items-center section-title">
+            <h1 class=" text-center text-dark title-page">Oriphoto, l'appareil photo vintage de vos rêves</h1>
         </div>
-        <div id="produits">
+        <div id="produits" class=" d-flex justify-content-around align-items-center flex-row flex-wrap ">
             <template id="templateArticle">
                 <a id="link-pageProduit" href="">
-                    <div id="menu-appareil">
+                    <div id="menu-appareil" class=" col md-4 col-sm-6 d-flex flex-column ">
                         <img id="img-appareil" src="" alt="image d'un appareil photo vintage">
                         <h2 id="title-appareil"></h2>
                     </div>
@@ -56,11 +60,11 @@
         </div>
     </main>
 
-    <div class="central-image2 display-image"></div>
+    <div class="bg-image2"></div>
 
     <footer>
-        <div class="footer-bar">
-            <div class="logo-footer">
+        <div class="footer d-flex flex-row justify-content-center align-items-center bg-footer">
+            <div class="d-flex justify-content-center align-items-center">
                 <a href="#" aria-label="icône pour instagram"><i class="fab fa-instagram icon-footer"></i></a>
                 <a href="#" aria-label="icône pour twitter"><i class="fab fa-twitter icon-footer"></i></a>
                 <a href="#" aria-label="icône pour facebook"><i class="fab fa-facebook-square icon-footer"></i></a>

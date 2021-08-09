@@ -1,3 +1,5 @@
+// CHERCHER LES ELEMENTS ET LES DISPLAYS
+
 (async function () {
   const articleId = getArticleId();
   const article = await getArticles(articleId);
@@ -24,13 +26,13 @@ function getArticles(articleId) {
 function hydrateArticle(article) {
   const imgElt = document.getElementById("img");
   const h1Elt = document.getElementById("name-produit");
-  const h2Elt = document.getElementById("price-produit");
+  const priceElt = document.getElementById("price-produit");
   const stockElt = document.getElementById("stock-produit");
   const lensesElt = document.getElementById("lenses");
 
   imgElt.src = `${article.imageUrl}`;
   h1Elt.textContent = `Appareil Photo ${article.name}`;
-  h2Elt.textContent = `Prix: ${article.price / 100}€`;
+  priceElt.textContent = `Prix: ${article.price / 100}€`;
   stockElt.textContent = "En stock";
 
   for (let i = 0; i < article.lenses.length; i++) {
@@ -39,3 +41,20 @@ function hydrateArticle(article) {
     lensesElt.appendChild(option);
   }
 }
+
+//  LOCAL STORAGE
+
+const btnElt = document.getElementById("buttonAdd");
+const h1Elt = document.getElementById("name-produit");
+
+let register = {
+  name: getArticles.h1Elt,
+  price: getArticles.price,
+};
+
+console.log(register);
+
+btnElt.addEventListener("click", () => {
+  let register = JSON.parse(localStorage.getItem("appareil"));
+  console.log(register);
+});

@@ -23,39 +23,30 @@ p {
   font-weight: bold;
 }
 
-/***************** HEADER *****************/
-
-.header-bar,
+.bg-header,
 .section-menu,
-.footer-bar {
+.bg-footer {
   background-color: #353535;
 }
 
-.header-bar {
-  width: 100%;
-  height: 100px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-  justify-content: space-around;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
+/***************** HEADER *****************/
 
-.header-menu {
-  color: #fff;
+.size-header {
+  height: 100px;
 }
 
 .header-menu:hover {
+  padding: 1rem;
   color: #e918aa;
+  background-color: #fff;
+  border-radius: 15px;
   transition: 0.2s ease-out;
 }
 
 .image-header {
   width: 250px;
-  height: 150px;
+  height: 100px;
+  margin-bottom: 1rem;
 }
 
 /***************** MAIN *****************/
@@ -67,38 +58,34 @@ main {
   align-items: center;
 }
 
-.central-image {
+.bg-image {
   width: 300px;
   height: 850px;
   background-image: url(../img/appareil-produit.jpg);
   background-size: 100%;
 }
+
 section {
   width: 100%;
-  height: 900px;
+  height: 100%;
 }
+
 .img-produit,
 .description-produit {
   margin: 0 1.8rem;
 }
 
 #img,
-.description-produit {
+.description-card {
   border: 1px #000 solid;
 }
 
-.description-produit {
+.description-card {
   padding: 3rem 1rem;
   border-radius: 20px;
 }
 
 .produit {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  flex-flow: row wrap;
   margin-top: 50px;
 }
 
@@ -134,32 +121,16 @@ section {
   margin-bottom: 10rem;
 }
 
-.button-produit {
-  margin: 2rem 5.5rem;
-  padding: 1rem;
+.bg-btn {
+  margin: 0 5rem;
   font-weight: bold;
   font-size: 1.2rem;
-  text-align: center;
-  cursor: pointer;
-  color: #fff;
   background-color: #a4508b;
   background-image: linear-gradient(326deg, #a4508b 0%, #5f0a87 74%);
   border: #a4508b;
-  border-radius: 10px;
 }
 
 /***************** FOOTER *****************/
-
-.footer-bar {
-  width: 100%;
-  height: 100px;
-}
-
-.logo-footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .icon-footer {
   font-size: 2.5rem;
