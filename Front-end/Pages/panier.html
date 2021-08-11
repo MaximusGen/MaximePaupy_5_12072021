@@ -8,10 +8,12 @@
     <meta name="description"
         content="Orinoco, un site d'e-commerce made in france proposant plusieurs type de produits, comme Oribook et Oritextile.">
     <title>Orinoco, e-commerce made in france</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/stylePanier.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="../stylespage.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;1,100&display=swap"
@@ -23,25 +25,59 @@
 <body>
 
     <header>
-        <div class="header-bar">
-            <p class="header-place">LOGO</p>
-            <a href="../index.html">Accueil</a>
-        </div>
+        <nav class="nav justify-content-around align-items-center bg-header size-header">
+            <a href="#" class="nav-link text-white"><img class="image-header" src="../img/logobis1.png"
+                    alt="Logo de Orinoco,site d'e-commerce français"></a>
+            <a href="../index.html" class="nav-link text-white">
+                <p class=" header-menu">Accueil</p>
+            </a>
+        </nav>
     </header>
 
-    <div class="central-image background-filter"></div>
+    <main class="d-flex justify-content-between align-items-center">
 
-    <section>
-        <div class="section-menu">
-            <p>Formulaire</p>
-        </div>
-    </section>
+        <div class="bg-image"></div>
 
-    <div class="central-image background-filter"></div>
+        <section class="container">
+            <div class="row">
+                <div class="title-page">
+                    <h1 class="text-center">Récapitulatif du panier</h1>
+                </div>
+                <div class="table">
+
+                </div>
+                <div class=" d-flex flex-column  align-items-center formulaire-validation">
+                    <label for="name">Nom:</label>
+                    <input type="text" id="name" placeholder="Vôtre Nom">
+                    <label for="surname">Prénom:</label>
+                    <input type="text" id="surname" placeholder="Vôtre Prénom">
+                    <label for="adress">Adresse:</label>
+                    <input type="text" id="adress" placeholder="Vôtre Adresse">
+                    <label for="postal">Code Postal:</label>
+                    <input type="text" id="postal" placeholder="Vôtre Code Postal">
+                    <label for="city">Ville:</label>
+                    <input type="text" id="city" placeholder="Vôtre Ville">
+                    <label for="email">Adresse e-mail:</label>
+                    <input type="text" id="email" placeholder="Vôtre Adresse E-mail">
+                    <button id="validationbtn"
+                        class="btn btn-sm btn-outline-secondary p-3 ml-5 mt-5 text-white text-center bg-btn">Valider
+                        vôtre
+                        commande</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="bg-image"></div>
+
+    </main>
 
     <footer>
-        <div class="footer-bar">
-            <div class="logo-footer"></div>
+        <div class="footer d-flex flex-row justify-content-center align-items-center bg-footer">
+            <div class="d-flex justify-content-center align-items-center">
+                <a href="#" aria-label="icône pour instagram"><i class="fab fa-instagram icon-footer"></i></a>
+                <a href="#" aria-label="icône pour twitter"><i class="fab fa-twitter icon-footer"></i></a>
+                <a href="#" aria-label="icône pour facebook"><i class="fab fa-facebook-square icon-footer"></i></a>
+            </div>
         </div>
     </footer>
 

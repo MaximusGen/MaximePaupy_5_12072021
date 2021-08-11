@@ -5,6 +5,7 @@ const priceElt = document.getElementById("price-produit");
 const stockElt = document.getElementById("stock-produit");
 const lensesElt = document.getElementById("lenses");
 const btnElt = document.getElementById("buttonAdd");
+const numElt = document.getElementById("AppareilNum");
 
 (async function () {
   const articleId = getArticleId();
@@ -25,14 +26,14 @@ function getArticles(articleId) {
       return articles;
     })
     .catch(function (error) {
-      alert("Une erreur est survenu");
+      alert("Une erreur est survenue");
     });
 }
 
 function hydrateArticle(article) {
   imgElt.src = `${article.imageUrl}`;
-  h1Elt.textContent = `Appareil Photo ${article.name}`;
-  priceElt.textContent = `Prix: ${article.price / 100}€`;
+  h1Elt.textContent = article.name;
+  priceElt.textContent = `${article.price / 100}€`;
   stockElt.textContent = "En stock";
 
   for (let i = 0; i < article.lenses.length; i++) {
@@ -42,33 +43,31 @@ function hydrateArticle(article) {
   }
 }
 
-//  LOCAL STORAGE
+//********************** LOCAL STORAGE **********************//
 
-if (localStorage.getItem("userPanier")) {
-  console.log("le panier de l'utilisateur existe dans le localStorage");
-} else {
-  console.log(
-    "Le panier n'existe pas, il va être créer et l'envoyer dans le localStorage"
-  );
+function addToCart() {
+  btnElt.addEventListener("click", () => {
+    if (numElt.value > 0 && numElt.value < 100) {
+      // ------ Création du produit qui sera ajouté au panier
+      let produitAdd = {
+        name: h1Elt.innerHTML,
+        price: priceElt.innerText,
+        quantity: parseFloat(document.getElementById("AppareilNum").value),
+      };
 
-  //Le panier est un tableau de produits
-  let panierInit = [];
-  localStorage.setItem("userPanier", JSON.stringify(panierInit));
+      // ----------------- Gestion du localStorage
+      let arrayProduits = [];
+
+      // Si le localStorage existe, on récupère son contenu, on l'insère dans le tableau arrayProductsInCart, puis on le renvoit vers le localStorage avec le nouveau produit ajouté.
+      if (localStorage.getItem("produits") !== null) {
+        arrayProductsInCart = JSON.parse(localStorage.getItem("produits"));
+
+        // Si le LS est vide, on le crée avec le produit ajouté
+      }
+      arrayProduits.push(produitAdd);
+      localStorage.setItem("produits", JSON.stringify(arrayProduits));
+    }
+  });
 }
 
-//L'user a maintenant un panier
-let userPanier = JSON.parse(localStorage.getItem("userPanier"));
-
-//Au clic de l'user pour mettre le produit dans le panier
-
-addPanier = () => {
-  btnElt.addEventListener("click", function () {
-    const produit = getArticles();
-    userPanier.push(produit);
-    localStorage.setItem("userPanier", JSON.stringify(userPanier));
-    console.log("Administration : le produit a été ajouté au panier");
-    alert("Vous avez ajouté ce produit dans votre panier");
-  });
-};
-
-addPanier();
+addToCart();
