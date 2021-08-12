@@ -6,10 +6,11 @@ const stockElt = document.getElementById("stock-produit");
 const lensesElt = document.getElementById("lenses");
 const btnElt = document.getElementById("buttonAdd");
 const numElt = document.getElementById("AppareilNum");
+const id = getArticleId();
 
 (async function () {
-  const articleId = getArticleId();
-  const article = await getArticles(articleId);
+  getArticleId();
+  const article = await getArticles(id);
   hydrateArticle(article);
 })();
 
@@ -17,8 +18,8 @@ function getArticleId() {
   return new URL(location.href).searchParams.get("id");
 }
 
-function getArticles(articleId) {
-  return fetch(`http://localhost:3000/api/cameras/${articleId}`)
+function getArticles(id) {
+  return fetch(`http://localhost:3000/api/cameras/${id}`)
     .then(function (response) {
       return response.json();
     })
@@ -45,7 +46,7 @@ function hydrateArticle(article) {
 
 //********************** LOCAL STORAGE **********************//
 
-function addToCart() {
+function AddProdBtn() {
   btnElt.addEventListener("click", () => {
     if (numElt.value > 0 && numElt.value < 100) {
       // ------ Création du produit qui sera ajouté au panier
@@ -53,21 +54,20 @@ function addToCart() {
         name: h1Elt.innerHTML,
         price: priceElt.innerText,
         quantity: parseFloat(document.getElementById("AppareilNum").value),
+        _id: id,
       };
 
-      // ----------------- Gestion du localStorage
       let arrayProduits = [];
 
-      // Si le localStorage existe, on récupère son contenu, on l'insère dans le tableau arrayProductsInCart, puis on le renvoit vers le localStorage avec le nouveau produit ajouté.
+      // Si le localStorage existe, on récupère son contenu, on l'insère dans le tableau , puis on le renvoit vers le localStorage avec le nouveau produit ajouté.
       if (localStorage.getItem("produits") !== null) {
         arrayProductsInCart = JSON.parse(localStorage.getItem("produits"));
-
-        // Si le LS est vide, on le crée avec le produit ajouté
       }
       arrayProduits.push(produitAdd);
       localStorage.setItem("produits", JSON.stringify(arrayProduits));
+      alert("Vous avez ajouté ce produit dans votre panier");
     }
   });
 }
 
-addToCart();
+AddProdBtn();

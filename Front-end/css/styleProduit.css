@@ -32,14 +32,19 @@ p {
 /***************** HEADER *****************/
 
 .size-header {
-  height: 100px;
+  width: 100%;
 }
 
-.header-menu:hover {
+.font-navlink {
+  color: #fff;
   padding: 1rem;
+  font-size: 1.5rem;
+  border: 2px solid #fff;
+}
+
+.font-navlink:hover {
   color: #e918aa;
-  background-color: #fff;
-  border-radius: 15px;
+  border-color: #e918aa;
   transition: 0.2s ease-out;
 }
 
@@ -48,7 +53,6 @@ p {
   height: 100px;
   margin-bottom: 1rem;
 }
-
 /***************** MAIN *****************/
 
 main {
@@ -70,41 +74,13 @@ section {
   height: 100%;
 }
 
-.img-produit,
-.description-produit {
-  margin: 0 1.8rem;
-}
-
-.img-produit,
-.description-card {
-  border: 1px #000 solid;
-}
-
-.img-produit {
-  width: 600px;
-  height: 600px;
-  display: flex;
-  align-items: center;
-  border-radius: 15px;
-  padding: 0 2px 0 4px;
-}
-
-.description-card {
-  padding: 3rem 1rem;
-  border-radius: 20px;
-}
-
-.produit {
-  margin-top: 50px;
+label {
+  font-size: 1.5rem;
+  font-weight: normal;
 }
 
 #img {
-  width: 590px;
-  /*height: 600px;*/
-}
-
-#name-produit {
-  font-size: 1.8rem;
+  max-width: 1080px;
 }
 
 #lenses-produit {
@@ -127,11 +103,14 @@ section {
 
 #price-produit {
   font-weight: normal;
-  margin-bottom: 10rem;
+}
+
+#buttonAdd {
+  margin: 2rem;
+  align-self: center;
 }
 
 .bg-btn {
-  margin: 0 5rem;
   font-weight: bold;
   font-size: 1.2rem;
   background-color: #a4508b;
