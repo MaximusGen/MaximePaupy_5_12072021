@@ -33,6 +33,10 @@ p {
   font-weight: bold;
 }
 
+h2 {
+  text-align: center;
+}
+
 .bg-header,
 .section-menu,
 .bg-footer {
@@ -66,9 +70,18 @@ p {
 
 /***************** CAROUSEL *****************/
 
+.box-slider {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+
+
 .img-slider {
   position: relative;
-  width: 800px;
+  width: 1920px;
   height: 500px;
   margin: 10px;
   background: #fff;
@@ -100,7 +113,7 @@ p {
 }
 
 .img-slider .slide .info h2 {
-  color: #fff;
+  color: #353535;
   font-size: 45px;
   text-transform: uppercase;
   font-weight: 800;
@@ -229,6 +242,7 @@ p {
 .section-title {
   height: 500px;
   border-bottom: 2px solid #000;
+  border-top: 2px solid #000;
 }
 
 .title-page {

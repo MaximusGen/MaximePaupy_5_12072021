@@ -6,6 +6,7 @@ const stockElt = document.getElementById("stock-produit");
 const lensesElt = document.getElementById("lenses");
 const btnElt = document.getElementById("buttonAdd");
 const numElt = document.getElementById("AppareilNum");
+const navlinkElt = document.getElementById("nav-link");
 const id = getArticleId();
 
 (async function () {
@@ -34,8 +35,8 @@ function getArticles(id) {
 function hydrateArticle(article) {
   imgElt.src = `${article.imageUrl}`;
   h1Elt.textContent = article.name;
-  priceElt.textContent = `${article.price / 100}€`;
   stockElt.textContent = "En stock";
+  priceElt.innerHTML = article.price / 100 + "€";
 
   for (let i = 0; i < article.lenses.length; i++) {
     let option = document.createElement("option");
@@ -52,7 +53,7 @@ function AddProdBtn() {
       // ------ Création du produit qui sera ajouté au panier
       let produitAdd = {
         name: h1Elt.innerHTML,
-        price: priceElt.innerText,
+        price: parseFloat(priceElt.innerText),
         quantity: parseFloat(document.getElementById("AppareilNum").value),
         _id: id,
       };
@@ -65,7 +66,15 @@ function AddProdBtn() {
       }
       arrayProduits.push(produitAdd);
       localStorage.setItem("produits", JSON.stringify(arrayProduits));
+
+      // Alerte lors d'un click sur "Ajouter au Panier"
       alert("Vous avez ajouté ce produit dans votre panier");
+
+      // Span lors d'un click sur "Ajouter au Panier"
+      let spanproduit = document.createElement("span");
+      navlinkElt.appendChild(spanproduit);
+      spanproduit.className = "span-link";
+      spanproduit.innerHTML = "1";
     }
   });
 }

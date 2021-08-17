@@ -25,50 +25,94 @@
 <body>
 
     <header>
-        <nav class="nav justify-content-around align-items-center bg-header size-header">
-            <a href="#" class="nav-link text-white"><img class="image-header" src="../img/logobis1.png"
-                    alt="Logo de Orinoco,site d'e-commerce français"></a>
-            <a href="../index.html" class="nav-link text-white">
-                <p class=" header-menu">Accueil</p>
-            </a>
+        <nav class=" d-flex justify-content-around align-items-center size-header bg-header">
+            <div class="image-header">
+                <a href="../index.html"><img class="image-header" src="../img/logobis1.png" alt="Logo de Oriphoto"></a>
+            </div>
+            <div>
+                <a class="font-navlink" href="../index.html">Accueil</a>
+            </div>
         </nav>
     </header>
 
-    <main class="d-flex justify-content-between align-items-center">
+    <main>
 
         <div class="bg-image"></div>
 
-        <section class="container">
-            <div class="row">
-                <div class="title-page">
-                    <h1 class="text-center">Récapitulatif du panier</h1>
-                </div>
-                <div class="table">
+        <div class="row m-5">
+            <div class="col-75">
+                <div class="container">
+                    <form>
 
-                </div>
-                <div class=" d-flex flex-column  align-items-center formulaire-validation">
-                    <label for="name">Nom:</label>
-                    <input type="text" id="name" placeholder="Vôtre Nom">
-                    <label for="surname">Prénom:</label>
-                    <input type="text" id="surname" placeholder="Vôtre Prénom">
-                    <label for="adress">Adresse:</label>
-                    <input type="text" id="adress" placeholder="Vôtre Adresse">
-                    <label for="postal">Code Postal:</label>
-                    <input type="text" id="postal" placeholder="Vôtre Code Postal">
-                    <label for="city">Ville:</label>
-                    <input type="text" id="city" placeholder="Vôtre Ville">
-                    <label for="email">Adresse e-mail:</label>
-                    <input type="text" id="email" placeholder="Vôtre Adresse E-mail">
-                    <button id="validationbtn"
-                        class="btn btn-sm btn-outline-secondary p-3 ml-5 mt-5 text-white text-center bg-btn">Valider
-                        vôtre
-                        commande</button>
+                        <div class="row">
+                            <div class="col-50">
+                                <h3>Remplissez ce formulaire</h3>
+                                <label for="fname"><i class="fa fa-user"></i> Nom/Prénom </label>
+                                <input type="text" id="fname" name="firstname" placeholder="Paupy Maxime">
+                                <label for="email"><i class="fa fa-envelope"></i> E-mail</label>
+                                <input type="text" id="email" name="email" placeholder="maximepaupy@exemple.fr">
+                                <label for="adr"><i class="fa fa-address-card-o"></i> Adresse</label>
+                                <input type="text" id="adr" name="address" placeholder="28 rue du landy">
+                                <label for="city"><i class="fa fa-institution"></i> Ville</label>
+                                <input type="text" id="city" name="city" placeholder="Paris">
+
+                                <div class="row">
+                                    <div class="col-50">
+                                        <label for="zip">Code Postal</label>
+                                        <input type="text" id="zip" name="zip" placeholder="75013">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-50">
+                                <h3>Paiement</h3>
+                                <label for="fname">Cartes Bleue Accéptées</label>
+                                <div class="icon-container">
+                                    <i class="fa fa-cc-visa" style="color:navy;"></i>
+                                    <i class="fa fa-cc-amex" style="color:blue;"></i>
+                                    <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                                    <i class="fa fa-cc-discover" style="color:orange;"></i>
+                                </div>
+                                <label for="cname">Nom sur la carte</label>
+                                <input type="text" id="cname" name="cardname" placeholder="Maxime Paupy">
+                                <label for="ccnum">Numéro de la carte</label>
+                                <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+                                <label for="expmonth"> Mois d'expiration de la carte</label>
+                                <input type="text" id="expmonth" name="expmonth" placeholder="Août">
+
+                                <div class="row">
+                                    <div class="col-50">
+                                        <label for="expyear">Années d'expiration de la carte</label>
+                                        <input type="text" id="expyear" name="expyear" placeholder="2018">
+                                    </div>
+                                    <div class="col-50">
+                                        <label for="cvv">CVV</label>
+                                        <input type="text" id="cvv" name="cvv" placeholder="352">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <button type="submit" id="validation-form" class="btn">Valider vôtre commande</button>
+                    </form>
                 </div>
             </div>
-        </section>
 
-        <div class="bg-image"></div>
-
+            <div class="col-25">
+                <div class="container">
+                    <h4 class="mt-3">Récapitulatif
+                    </h4>
+                    <div class="content-add mt-4">
+                        <div id="produit-add" class=" d-flex flex-row  justify-content-between">
+                            <p id="empty-basket">Panier Vide</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <p>Total <span id="total-price" class="price"></span></p>
+                    <button id="clear-basket" class="btn">Supprimer vôtre panier</button>
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer>
@@ -80,7 +124,7 @@
             </div>
         </div>
     </footer>
-
+    <script src="../js/panier.js" defer></script>
 </body>
 
 </html>

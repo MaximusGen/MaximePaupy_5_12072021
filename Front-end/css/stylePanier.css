@@ -41,20 +41,31 @@ p {
 /***************** HEADER *****************/
 
 .size-header {
-  height: 100px;
+  width: 100%;
 }
 
-.header-menu:hover {
+.font-navlink {
+  color: #fff;
   padding: 1rem;
+  font-size: 1.5rem;
+  border: 2px solid #fff;
+}
+
+.font-navlink:hover {
   color: #e918aa;
-  background-color: #fff;
-  border-radius: 15px;
+  border-color: #e918aa;
   transition: 0.2s ease-out;
 }
 
 .image-header {
   width: 250px;
   height: 100px;
+  margin-bottom: 1rem;
+}
+
+.back-icon {
+  color: #fff;
+  font-size: 2rem;
 }
 
 /***************** MAIN *****************/
@@ -69,42 +80,103 @@ section {
 }
 
 .bg-image {
-  background-image: url(../img/appareil-produit.jpg);
+  /* background-image: url(../img/carousel-1.jpg);*/
   background-size: 100%;
   width: 350px;
-  height: 900px;
 }
 
-.title-page {
-  border: 1px solid #000;
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin: 0 -16px;
 }
 
-.table {
-  height: 100px;
-  margin-top: 1rem;
-  border: 1px solid #000;
-  border-radius: 15px;
+.col-25 {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+}
+
+.col-50 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+}
+
+.col-75 {
+  -ms-flex: 75%; /* IE10 */
+  flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 16px;
+}
+
+.container {
+  background-color: #f2f2f2;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+}
+
+input[type="text"] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
 }
 
 label {
-  margin-top: 1rem;
-  margin-bottom: 0.2rem;
+  margin-bottom: 10px;
+  display: block;
 }
 
-input {
-  width: 350px;
-  padding: 1rem;
+.icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
 }
 
-.bg-btn {
-  margin: 0 5rem;
-  font-weight: bold;
-  font-size: 1.2rem;
+.btn {
   background-color: #a4508b;
   background-image: linear-gradient(326deg, #a4508b 0%, #5f0a87 74%);
-  border: #a4508b;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: bold;
 }
 
+.btn:hover {
+  background-color: #fff;
+}
+
+span.price {
+  float: right;
+  color: #000;
+}
+
+#empty-basket {
+  margin-top: 2rem;
+  margin-left: 8rem;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (and change the direction - make the "cart" column go on top) */
+@media (max-width: 800px) {
+  .row {
+    flex-direction: column-reverse;
+  }
+  .col-25 {
+    margin-bottom: 20px;
+  }
+}
 /***************** FOOTER *****************/
 
 .icon-footer {

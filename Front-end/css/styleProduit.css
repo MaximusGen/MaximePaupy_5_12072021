@@ -35,6 +35,16 @@ p {
   width: 100%;
 }
 
+.image-header {
+  width: 250px;
+  height: 100px;
+  margin-bottom: 1rem;
+}
+
+/*#nav-link {
+  margin-top: 1.5rem;
+}*/
+
 .font-navlink {
   color: #fff;
   padding: 1rem;
@@ -47,12 +57,20 @@ p {
   border-color: #e918aa;
   transition: 0.2s ease-out;
 }
-
-.image-header {
-  width: 250px;
-  height: 100px;
-  margin-bottom: 1rem;
+.span-link {
+  font-weight: bold;
+  background-color: #e918aa;
+  display: block;
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 50%;
+  transform: translate(90px, -65px);
+  text-align: center;
+  font-size: 1.5rem;
 }
+
 /***************** MAIN *****************/
 
 main {
