@@ -65,37 +65,47 @@ validationBtn.addEventListener("click", (event) => {
   };
 
   if (
-    (regexMail.test(contact.firstName) == true) &
-    (regexName.test(contact.lastName) == true) &
-    (regexName.test(contact.address) == true) &
-    (regexCity.test(contact.city) == true) &
-    (regexAddress.test(contact.email) == true)
+    regexName.test(document.getElementById("firstname").value) !== true ||
+    regexName.test(document.getElementById("lastname").value) !== true ||
+    regexAddress.test(document.getElementById("address").value) !== true ||
+    regexCity.test(document.getElementById("city").value) !== true ||
+    regexMail.test(document.getElementById("mail").value) !== true
   ) {
-    event.preventDefault();
-
-    let products = [];
-    for (Id of localStg) {
-      products.push(Id.id);
-    }
-
-    fetch("http://localhost:3000/api/cameras/order", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ contact, products }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        localStorage.setItem("orderId", JSON.stringify(data));
-        document.location.href = "confirmation.html";
-      })
-      .catch((erreur) => console.log("erreur : " + erreur));
+    alert("Veuillez remplir le formulaire !");
   } else {
-    alert(
-      "Veuillez correctement renseigner le formulaire pour valider votre commande."
-    );
+    Postsend();
   }
 });
+
+function Postsend() {
+  let contactinfo = {
+    firstName: document.getElementById("firstname").value,
+    lastName: document.getElementById("lastname").value,
+    address: document.getElementById("address").value,
+    city: document.getElementById("city").value,
+    email: document.getElementById("mail").value,
+  };
+
+  let productsId = [];
+  for (let id of localStg) {
+    productsId.push(id._id);
+  }
+
+  fetch(`http://localhost:3000/api/cameras/order`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    mode: "cors",
+    body: JSON.stringify({
+      contact: contactinfo,
+      products: productsId,
+    }),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      localStorage.clear();
+      localStorage.setItem("orderId", data.orderId);
+      window.location.href = "../pages/confirmation.html";
+    });
+}
 
 main();
