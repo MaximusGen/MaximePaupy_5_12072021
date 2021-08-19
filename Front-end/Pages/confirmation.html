@@ -8,10 +8,12 @@
     <meta name="description"
         content="Orinoco, un site d'e-commerce made in france proposant plusieurs type de produits, comme Oribook et Oritextile.">
     <title>Orinoco, e-commerce made in france</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="../stylespage.css">
+    <link rel="stylesheet" href="../css/styleConfirmation.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;1,100&display=swap"
@@ -23,28 +25,37 @@
 <body>
 
     <header>
-        <div class="header-bar">
-            <p class="header-place">LOGO</p>
-            <p class="header-place"> <a href="../index.html">Accueil</a></p>
-        </div>
+        <nav class=" d-flex justify-content-around align-items-center size-header bg-header">
+            <div class="image-header">
+                <a href="../index.html"><img class="image-header" src="../img/logobis1.png" alt="Logo de Oriphoto"></a>
+            </div>
+            <div>
+                <a class="font-navlink" href="../index.html">Accueil</a>
+            </div>
+        </nav>
     </header>
 
-    <div class="central-image background-filter"></div>
 
     <section>
         <div class="section-menu">
-            <p>Formulaire</p>
+
         </div>
     </section>
 
-    <div class="central-image background-filter"></div>
 
     <footer>
-        <div class="footer-bar">
-            <div class="logo-footer"></div>
+        <div class="footer d-flex flex-row justify-content-center align-items-center bg-footer">
+            <div class="d-flex justify-content-center align-items-center">
+                <a href="#" aria-label="icône pour instagram"><i class="fab fa-instagram icon-footer"></i></a>
+                <a href="#" aria-label="icône pour twitter"><i class="fab fa-twitter icon-footer"></i></a>
+                <a href="#" aria-label="icône pour facebook"><i class="fab fa-facebook-square icon-footer"></i></a>
+            </div>
         </div>
     </footer>
-
+    <script src="../js/confirmation.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

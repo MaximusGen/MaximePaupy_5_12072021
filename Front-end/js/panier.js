@@ -4,7 +4,6 @@ function main() {
   displayArray();
   TotalArray(displayArray);
   toEmptyBasket();
-  checkformulaire();
 }
 
 function displayArray() {
@@ -46,18 +45,57 @@ function toEmptyBasket() {
   });
 }
 
-function checkformulaire() {
-  const validationBtn = document.getElementById("validation-form").value;
-  let nameInput = document.getElementById("fname").value;
-  let mailInput = document.getElementById("email").value;
-  let adressInput = document.getElementById("adr").value;
-  let cityInput = document.getElementById("city").value;
-  let zipInput = document.getElementById("zip").value;
-  let namecardInput = document.getElementById("cname").value;
-  let numbercardInput = document.getElementById("ccnum").value;
-  let monthcardInput = document.getElementById("expmonth").value;
-  let yearcardInput = document.getElementById("expyear").value;
-  let cvvcardInput = document.getElementById("cvv").value;
-}
+// -------  Envoi de la requête POST au back-end -------- \\
+
+const validationBtn = document.getElementById("validation-form");
+
+const regexName = /^(([a-zA-ZÀ-ÿ]+[\s\-]{1}[a-zA-ZÀ-ÿ]+)|([a-zA-ZÀ-ÿ]+))$/;
+const regexCity =
+  /^(([a-zA-ZÀ-ÿ]+[\s\-]{1}[a-zA-ZÀ-ÿ]+)|([a-zA-ZÀ-ÿ]+)){1,10}$/;
+const regexMail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]{2,}\.[a-z]{2,4}$/;
+const regexAddress = /^(([a-zA-ZÀ-ÿ0-9]+[\s\-]{1}[a-zA-ZÀ-ÿ0-9]+)){1,10}$/;
+
+validationBtn.addEventListener("click", (event) => {
+  let contact = {
+    firstName: document.getElementById("firstname").value,
+    lastName: document.getElementById("lastname").value,
+    address: document.getElementById("address").value,
+    city: document.getElementById("city").value,
+    email: document.getElementById("mail").value,
+  };
+
+  if (
+    (regexMail.test(contact.firstName) == true) &
+    (regexName.test(contact.lastName) == true) &
+    (regexName.test(contact.address) == true) &
+    (regexCity.test(contact.city) == true) &
+    (regexAddress.test(contact.email) == true)
+  ) {
+    event.preventDefault();
+
+    let products = [];
+    for (Id of localStg) {
+      products.push(Id.id);
+    }
+
+    fetch("http://localhost:3000/api/cameras/order", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ contact, products }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        localStorage.setItem("orderId", JSON.stringify(data));
+        document.location.href = "confirmation.html";
+      })
+      .catch((erreur) => console.log("erreur : " + erreur));
+  } else {
+    alert(
+      "Veuillez correctement renseigner le formulaire pour valider votre commande."
+    );
+  }
+});
 
 main();
