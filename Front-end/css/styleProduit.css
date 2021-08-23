@@ -41,10 +41,6 @@ p {
   margin-bottom: 1rem;
 }
 
-/*#nav-link {
-  margin-top: 1.5rem;
-}*/
-
 .font-navlink {
   color: #fff;
   padding: 1rem;
@@ -71,6 +67,11 @@ p {
   font-size: 1.5rem;
 }
 
+.span-preview {
+  font-size: 1.4rem;
+  background-color: #ffd700;
+  color: #353535;
+}
 /***************** MAIN *****************/
 
 main {
@@ -95,22 +96,11 @@ section {
 label {
   font-size: 1.5rem;
   font-weight: normal;
+  margin-top: 1.5rem;
 }
 
 #img {
   max-width: 1080px;
-}
-
-#lenses-produit {
-  font-size: 1.5rem;
-  font-weight: normal;
-}
-
-#lenses {
-  font-size: 1.1rem;
-  padding: 0.5em;
-  margin: 0 1rem;
-  background-color: ;
 }
 
 #stock-produit {
@@ -136,6 +126,22 @@ label {
   border: #a4508b;
 }
 
+.modal-title {
+  font-size: 1.7rem;
+}
+.bg-btn1 {
+  font-weight: bold;
+  font-size: 1.2rem;
+  background-color: #00b712;
+  background-image: linear-gradient(315deg, #00b712 0%, #5aff15 74%);
+}
+.bg-btn2 {
+  font-weight: bold;
+  font-size: 1.2rem;
+  background-color: #6b0f1a;
+  background-image: linear-gradient(315deg, #6b0f1a 0%, #b91372 74%);
+}
+
 /***************** FOOTER *****************/
 
 .icon-footer {
@@ -145,6 +151,24 @@ label {
 }
 
 .icon-footer:hover {
+  color: #e918aa;
+  transition: 0.2s ease-out;
+}
+
+.icones {
+  flex-grow: 1;
+}
+
+.contact {
+  flex-grow: 0;
+  margin-right: 2rem;
+}
+
+.contacts {
+  color: #fff;
+}
+
+.contacts:hover {
   color: #e918aa;
   transition: 0.2s ease-out;
 }

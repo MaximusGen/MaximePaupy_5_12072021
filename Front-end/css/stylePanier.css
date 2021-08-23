@@ -83,87 +83,45 @@ main {
   background: url(../img/appareil2.jpg);
 }
 
-.row {
-  display: -ms-flexbox; /* IE10 */
-  display: flex;
-  -ms-flex-wrap: wrap; /* IE10 */
-  flex-wrap: wrap;
-  margin: 0 -16px;
+th {
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
-.col-25 {
-  -ms-flex: 25%; /* IE10 */
-  flex: 25%;
+td {
+  font-weight: bold;
+  font-size: 1.3rem;
 }
 
-.col-50 {
-  -ms-flex: 50%; /* IE10 */
-  flex: 50%;
+td img {
+  max-width: 500px;
 }
 
-.col-75 {
-  -ms-flex: 75%; /* IE10 */
-  flex: 75%;
-}
-
-.col-25,
-.col-50,
-.col-75 {
-  padding: 0 16px;
-}
-
-.container {
-  background-color: #f2f2f2;
-  padding: 5px 20px 15px 20px;
-  border: 1px solid lightgrey;
-  border-radius: 3px;
-}
-
-input[type="text"] {
+form {
   width: 100%;
-  margin-bottom: 20px;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
 }
 
 label {
-  margin-bottom: 10px;
-  display: block;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
 }
 
-.icon-container {
-  margin-bottom: 20px;
-  padding: 7px 0;
-  font-size: 24px;
+input {
+  max-width: 100%;
 }
 
 .btn {
+  width: 100%;
+  font-size: 1.5rem;
   background-color: #a4508b;
   background-image: linear-gradient(326deg, #a4508b 0%, #5f0a87 74%);
   color: white;
-  padding: 12px;
-  margin: 10px 0;
-  border: none;
-  width: 100%;
-  border-radius: 3px;
-  cursor: pointer;
-  font-size: 17px;
   font-weight: bold;
 }
 
 .btn:hover {
-  background-color: #fff;
-}
-
-span.price {
-  float: right;
-  color: #000;
-}
-
-#empty-basket {
-  margin-top: 2rem;
-  margin-left: 5.5rem;
+  color: #ffd700;
 }
 
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (and change the direction - make the "cart" column go on top) */
@@ -184,6 +142,24 @@ span.price {
 }
 
 .icon-footer:hover {
+  color: #e918aa;
+  transition: 0.2s ease-out;
+}
+
+.icones {
+  flex-grow: 1;
+}
+
+.contact {
+  flex-grow: 0;
+  margin-right: 2rem;
+}
+
+.contacts {
+  color: #fff;
+}
+
+.contacts:hover {
   color: #e918aa;
   transition: 0.2s ease-out;
 }

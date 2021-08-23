@@ -1,84 +1,47 @@
-let localStg = JSON.parse(localStorage.getItem("produits"));
+/* Afficher les produits dans le panier */
+displayArticle();
+// Affiche le prix Total \\
+displayTotalPrice();
+// Bouton pour supprimer le panier \\
 
-function main() {
-  displayArray();
-  TotalArray(displayArray);
-  toEmptyBasket();
-}
+const btnclearBasket = document.getElementById("clearBasket");
+btnclearBasket.addEventListener("click", () => {
+  localStorage.clear();
+  location.reload();
+});
 
-function displayArray() {
-  if (localStorage.getItem("produits")) {
-    const empty = document.getElementById("empty-basket");
-    empty.style.display = "none";
-  }
+// Validation du formulaire et Post du formulaire \\
 
-  for (let produit of localStg) {
-    const divElt = document.getElementById("produit-add");
-
-    let namequantityElt = document.createElement("p");
-    divElt.appendChild(namequantityElt);
-    namequantityElt.innerText = `${produit.quantity}x` + produit.name;
-
-    let priceElt = document.createElement("p");
-    divElt.appendChild(priceElt);
-    priceElt.innerHTML = produit.price * produit.quantity + "€";
-  }
-}
-
-function TotalArray() {
-  let totalPaye = 0;
-  localStg.forEach((produits) => {
-    totalPaye += produits.price * produits.quantity;
-  });
-
-  //Affichage du prix total à payer dans l'addition
-  console.log(totalPaye);
-  document.getElementById("total-price").textContent = totalPaye + " €";
-}
-
-function toEmptyBasket() {
-  // Lorsque qu'on clique sur le bouton, le panier se vide ainsi que le localStorage
-  const emptybasketElt = document.getElementById("clear-basket");
-  emptybasketElt.addEventListener("click", () => {
-    localStorage.clear();
-    document.location.reload();
-  });
-}
-
-// -------  Envoi de la requête POST au back-end -------- \\
-
-const validationBtn = document.getElementById("validation-form");
-
+const btnorder = document.getElementById("postbtn");
 const regexName = /^(([a-zA-ZÀ-ÿ]+[\s\-]{1}[a-zA-ZÀ-ÿ]+)|([a-zA-ZÀ-ÿ]+))$/;
 const regexCity =
   /^(([a-zA-ZÀ-ÿ]+[\s\-]{1}[a-zA-ZÀ-ÿ]+)|([a-zA-ZÀ-ÿ]+)){1,10}$/;
 const regexMail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]{2,}\.[a-z]{2,4}$/;
 const regexAddress = /^(([a-zA-ZÀ-ÿ0-9]+[\s\-]{1}[a-zA-ZÀ-ÿ0-9]+)){1,10}$/;
+const checkbox = document.getElementById("checkbox");
 
-validationBtn.addEventListener("click", (event) => {
-  let contact = {
-    firstName: document.getElementById("firstname").value,
-    lastName: document.getElementById("lastname").value,
-    address: document.getElementById("address").value,
-    city: document.getElementById("city").value,
-    email: document.getElementById("mail").value,
-  };
-
-  if (
-    regexName.test(document.getElementById("firstname").value) !== true ||
-    regexName.test(document.getElementById("lastname").value) !== true ||
-    regexAddress.test(document.getElementById("address").value) !== true ||
-    regexCity.test(document.getElementById("city").value) !== true ||
-    regexMail.test(document.getElementById("mail").value) !== true
-  ) {
-    alert("Veuillez remplir le formulaire !");
-  } else {
-    Postsend();
-  }
+btnorder.addEventListener("click", (e) => {
+  e.preventDefault();
+  validForm();
 });
 
-function Postsend() {
-  let contactinfo = {
+function validForm() {
+  if (
+    (regexName.test(document.getElementById("firstname").value) == true) &
+    (regexName.test(document.getElementById("lastname").value) == true) &
+    (regexAddress.test(document.getElementById("address").value) == true) &
+    (regexCity.test(document.getElementById("city").value) == true) &
+    (regexName.test(document.getElementById("mail").value) == true) &
+    (checkbox.checked == true)
+  ) {
+    alert("Veuillez remplir le formulaire");
+  } else {
+    sendOrder();
+  }
+}
+
+function sendOrder() {
+  let contacts = {
     firstName: document.getElementById("firstname").value,
     lastName: document.getElementById("lastname").value,
     address: document.getElementById("address").value,
@@ -86,26 +49,27 @@ function Postsend() {
     email: document.getElementById("mail").value,
   };
 
-  let productsId = [];
-  for (let id of localStg) {
-    productsId.push(id._id);
+  let product = [];
+  for (let i = 0; i < basket.length; i++) {
+    product.push(basket[i].id);
   }
 
-  fetch(`http://localhost:3000/api/cameras/order`, {
+  fetch(`${url}/order`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     mode: "cors",
     body: JSON.stringify({
-      contact: contactinfo,
-      products: productsId,
+      contact: contacts,
+      products: product,
     }),
   })
     .then((response) => response.json())
     .then((data) => {
       localStorage.clear();
-      localStorage.setItem("orderId", data.orderId);
-      window.location.href = "../pages/confirmation.html";
+      localStorage.setItem("orderId", JSON.stringify(data));
+      window.location.href = "confirmation.html";
+    })
+    .catch((error) => {
+      alert("Fatal erreur : " + error);
     });
 }
-
-main();

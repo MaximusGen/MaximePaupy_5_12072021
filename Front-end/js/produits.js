@@ -5,7 +5,7 @@ const priceElt = document.getElementById("price-produit");
 const stockElt = document.getElementById("stock-produit");
 const lensesElt = document.getElementById("lenses");
 const btnElt = document.getElementById("buttonAdd");
-const numElt = document.getElementById("AppareilNum");
+let quantity = document.getElementById("quantity").value;
 const navlinkElt = document.getElementById("nav-link");
 const id = getArticleId();
 
@@ -13,13 +13,14 @@ const id = getArticleId();
   getArticleId();
   const article = await getArticles(id);
   hydrateArticle(article);
+  basketAdd(article);
 })();
 
 function getArticleId() {
-  return new URL(location.href).searchParams.get("id");
+  return new URL(document.location).searchParams.get("id");
 }
 
-function getArticles(id) {
+async function getArticles(id) {
   return fetch(`http://localhost:3000/api/cameras/${id}`)
     .then(function (response) {
       return response.json();
@@ -47,36 +48,40 @@ function hydrateArticle(article) {
 
 //********************** LOCAL STORAGE **********************//
 
-function AddProdBtn() {
-  btnElt.addEventListener("click", () => {
-    if (numElt.value > 0 && numElt.value < 100) {
-      // ------ Création du produit qui sera ajouté au panier
-      let produitAdd = {
-        name: h1Elt.innerHTML,
-        price: parseFloat(priceElt.innerText),
-        quantity: parseFloat(document.getElementById("AppareilNum").value),
-        _id: id,
-      };
+let productinCard = localStorage.getItem("appareil");
 
-      let arrayProduits = [];
-
-      // Si le localStorage existe, on récupère son contenu, on l'insère dans le tableau , puis on le renvoit vers le localStorage avec le nouveau produit ajouté.
-      if (localStorage.getItem("produits") !== null) {
-        arrayProductsInCart = JSON.parse(localStorage.getItem("produits"));
-      }
-      arrayProduits.push(produitAdd);
-      localStorage.setItem("produits", JSON.stringify(arrayProduits));
-
-      // Alerte lors d'un click sur "Ajouter au Panier"
-      alert("Vous avez ajouté ce produit dans votre panier");
-
-      // Span lors d'un click sur "Ajouter au Panier"
-      let spanproduit = document.createElement("span");
-      navlinkElt.appendChild(spanproduit);
-      spanproduit.className = "span-link";
-      spanproduit.innerHTML = "1";
-    }
-  });
+if (productinCard === null) {
+  productinCard = [];
+} else {
+  productinCard = JSON.parse(productinCard);
 }
 
-AddProdBtn();
+function basketAdd(article) {
+  btnElt.addEventListener("click", () => {
+    addtoCart(article);
+  });
+
+  function addtoCart(article) {
+    let quantityValue = parseFloat(document.getElementById("quantity").value);
+    let lensesValue = lensesElt.value;
+    let newiD = id;
+    let product = productinCard.find(
+      (obj) => obj.id === newiD && obj.option === lensesValue
+    );
+    if (product) {
+      product.quantity += parseInt(quantityValue);
+    } else {
+      productinCard.push({
+        image: article.imageUrl,
+        id: newiD,
+        name: article.name,
+        option: lensesValue,
+        quantity: quantityValue,
+        price: article.price / 100,
+      });
+    }
+    localStorage.setItem("appareil", JSON.stringify(productinCard));
+  }
+}
+
+basketPreview();

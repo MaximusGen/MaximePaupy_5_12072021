@@ -48,7 +48,6 @@ h2 {
   width: 100%;
 }
 
-
 .font-navlink {
   color: #fff;
   padding: 1rem;
@@ -68,6 +67,11 @@ h2 {
   margin-bottom: 1rem;
 }
 
+.span-preview {
+  font-size: 1.4rem;
+  background-color: #ffd700;
+  color: #353535;
+}
 /***************** CAROUSEL *****************/
 
 .box-slider {
@@ -77,7 +81,6 @@ h2 {
   align-items: center;
   margin-bottom: 5rem;
 }
-
 
 .img-slider {
   position: relative;
@@ -113,20 +116,12 @@ h2 {
 }
 
 .img-slider .slide .info h2 {
-  color: #353535;
+  color: #fff;
   font-size: 45px;
   text-transform: uppercase;
   font-weight: 800;
-  letter-spacing: 2px;
-}
-
-.img-slider .slide .info p {
-  color: #fff;
-  background: rgba(0, 0, 0, 0.1);
-  font-size: 16px;
-  width: 60%;
-  padding: 10px;
-  border-radius: 4px;
+  letter-spacing: 5px;
+  margin-left: 35rem;
 }
 
 .img-slider .navigation {
@@ -237,8 +232,6 @@ h2 {
 }
 /***************** MAIN *****************/
 
-
-
 .section-title {
   height: 500px;
   border-bottom: 2px solid #000;
@@ -259,11 +252,21 @@ h2 {
   width: 100%;
 }
 
-.p-h2{
-   padding: 2rem;
+.p-h2 {
+  padding: 2rem;
 }
 
+.bg-btn {
+  font-size: 1.5rem;
+  color: #fff;
+  background-color: #a4508b;
+  background-image: linear-gradient(326deg, #a4508b 0%, #5f0a87 74%);
+  border: #a4508b;
+}
 
+.bg-btn:hover {
+  color: #ffd700;
+}
 /***************** FOOTER *****************/
 
 .icon-footer {
@@ -275,4 +278,22 @@ h2 {
 .icon-footer:hover {
   color: #e918aa;
   transition: 0.2s ease-out;
+}
 
+.icones {
+  flex-grow: 1;
+}
+
+.contact {
+  flex-grow: 0;
+  margin-right: 2rem;
+}
+
+.contacts {
+  color: #fff;
+}
+
+.contacts:hover {
+  color: #e918aa;
+  transition: 0.2s ease-out;
+}
