@@ -48,12 +48,10 @@ p {
   color: #fff;
   padding: 1rem;
   font-size: 1.5rem;
-  border: 2px solid #fff;
 }
 
 .font-navlink:hover {
   color: #e918aa;
-  border-color: #e918aa;
   transition: 0.2s ease-out;
 }
 
@@ -107,21 +105,8 @@ label {
   font-weight: bold;
 }
 
-input {
-  max-width: 100%;
-}
-
-.btn {
-  width: 100%;
-  font-size: 1.5rem;
-  background-color: #a4508b;
-  background-image: linear-gradient(326deg, #a4508b 0%, #5f0a87 74%);
-  color: white;
-  font-weight: bold;
-}
-
-.btn:hover {
-  color: #ffd700;
+.form-control {
+  max-width: 500px;
 }
 
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (and change the direction - make the "cart" column go on top) */

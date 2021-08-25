@@ -45,12 +45,10 @@ p {
   color: #fff;
   padding: 1rem;
   font-size: 1.5rem;
-  border: 2px solid #fff;
 }
 
 .font-navlink:hover {
   color: #e918aa;
-  border-color: #e918aa;
   transition: 0.2s ease-out;
 }
 

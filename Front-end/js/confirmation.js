@@ -1,4 +1,4 @@
-const order = JSON.parse(localStorage.getItem("orderId")) || [];
+const order = JSON.parse(localStorage.getItem("orderId"));
 
 const idOrder = document.getElementById("product-id");
 const orderfirstName = document.getElementById("order-firstname");
@@ -20,8 +20,16 @@ function displayId() {
 
 displayId();
 
+// Retour à l'accueil avec le LocalStorage qui se vide \\
 const BackHome = document.getElementById("nav-link");
 
 BackHome.addEventListener("click", () => {
   localStorage.clear();
+});
+
+// Bouton pour imprimer la page \\
+const btnPrint = document.getElementById("order-print");
+
+btnPrint.addEventListener("click", () => {
+  window.print();
 });

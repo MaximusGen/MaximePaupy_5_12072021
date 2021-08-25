@@ -1,5 +1,6 @@
 /* Afficher les produits dans le panier */
 displayArticle();
+deleteproduct();
 // Affiche le prix Total \\
 displayTotalPrice();
 // Bouton pour supprimer le panier \\
@@ -27,12 +28,12 @@ btnorder.addEventListener("click", (e) => {
 
 function validForm() {
   if (
-    (regexName.test(document.getElementById("firstname").value) == true) &
-    (regexName.test(document.getElementById("lastname").value) == true) &
-    (regexAddress.test(document.getElementById("address").value) == true) &
-    (regexCity.test(document.getElementById("city").value) == true) &
-    (regexName.test(document.getElementById("mail").value) == true) &
-    (checkbox.checked == true)
+    (regexName.test(document.getElementById("firstname").value) == false) &
+    (regexName.test(document.getElementById("lastname").value) == false) &
+    (regexAddress.test(document.getElementById("address").value) == false) &
+    (regexCity.test(document.getElementById("city").value) == false) &
+    (regexName.test(document.getElementById("mail").value) == false) &
+    (checkbox.checked == false)
   ) {
     alert("Veuillez remplir le formulaire");
   } else {
