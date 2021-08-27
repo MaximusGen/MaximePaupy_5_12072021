@@ -1,8 +1,28 @@
-/* Afficher les produits dans le panier */
+// Afficher les produits dans le panier \\
 displayArticle();
-deleteproduct();
+
+basketPreview();
+// Supprimer un produit dans le panier \\
+
+function deleteProduct() {
+  for (let i = 0; i < basket.length; i++) {
+    const btnDelete = document.getElementById(`deleteBtn-${basket[i].id}`);
+
+    btnDelete.addEventListener("click", (e) => {
+      e.preventDefault();
+      const filteredBasket = basket.filter((el) => el.id !== basket[i].id);
+      localStorage.setItem("appareil", JSON.stringify(filteredBasket));
+      window.location.reload();
+    });
+  }
+}
+
+deleteProduct();
+
 // Affiche le prix Total \\
+
 displayTotalPrice();
+
 // Bouton pour supprimer le panier \\
 
 const btnclearBasket = document.getElementById("clearBasket");
@@ -66,7 +86,6 @@ function sendOrder() {
   })
     .then((response) => response.json())
     .then((data) => {
-      localStorage.clear();
       localStorage.setItem("orderId", JSON.stringify(data));
       window.location.href = "confirmation.html";
     })

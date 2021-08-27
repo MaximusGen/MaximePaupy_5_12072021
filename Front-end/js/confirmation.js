@@ -7,6 +7,7 @@ const orderlastName = document.getElementById("order-lastname");
 const orderAddress = document.getElementById("order-address");
 const orderCity = document.getElementById("order-city");
 const orderMail = document.getElementById("order-mail");
+const orderPrice = document.getElementById("order-pricetotal");
 
 function displayId() {
   idOrder.innerText = `${order.orderId}`;
@@ -16,14 +17,21 @@ function displayId() {
   orderMail.innerText = `${order.contact.email}`;
   orderCity.innerText = `${order.contact.city}`;
   orderAddress.innerText = `${order.contact.address}`;
+  orderPrice.innerHTML = `${CalculTotalBasket()} €`;
 }
 
 displayId();
 
 // Retour à l'accueil avec le LocalStorage qui se vide \\
+
 const BackHome = document.getElementById("nav-link");
+const backIndex = document.getElementById("nav-back");
 
 BackHome.addEventListener("click", () => {
+  localStorage.clear();
+});
+
+backIndex.addEventListener("click", () => {
   localStorage.clear();
 });
 

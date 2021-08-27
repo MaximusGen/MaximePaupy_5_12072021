@@ -1,0 +1,96 @@
+@font-face {
+  font-family: "Retro";
+  src: url(Police/RetroSans.ttf);
+}
+
+body {
+  margin: 0 auto;
+  padding: 0;
+  height: 100vh;
+  max-width: 1920px;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: inherit;
+}
+
+a:hover {
+  color: inherit;
+}
+
+p {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+/***************** HEADER *****************/
+
+.size-header {
+  width: 100%;
+}
+
+.font-navlink {
+  color: #fff;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
+.font-navlink:hover {
+  color: #e918aa;
+  transition: 0.2s ease-out;
+}
+
+.image-header {
+  width: 250px;
+  height: 100px;
+  margin-bottom: 1rem;
+}
+
+.span-preview {
+  font-size: 1.4rem;
+  background-color: #ffd700;
+  color: #353535;
+}
+
+/***************** CAROUSEL PAGE INDEX *****************/
+
+.shadow {
+  color: #fff;
+  letter-spacing: 1rem;
+  text-shadow: #000 3px 3px 3px;
+}
+
+/***************** MAIN *****************/
+
+.title-page {
+  font-family: "Retro", sans-serif;
+  border-top: 1px #000 solid;
+  border-bottom: 1px #000 solid;
+}
+
+/***************** MAIN PAGE CONFIRMATION *****************/
+
+li {
+  list-style: none;
+}
+
+/***************** FOOTER *****************/
+
+.color {
+  color: #fff;
+}
+
+.color:hover {
+  color: #e918aa;
+  transition: 0.2s ease-out;
+}

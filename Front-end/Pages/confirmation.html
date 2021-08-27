@@ -10,10 +10,10 @@
     <title>Orinoco, e-commerce made in france</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="../css/styleConfirmation.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;1,100&display=swap"
@@ -24,51 +24,69 @@
 
 <body>
 
+    <!-- Header de Oriphoto -->
+
     <header>
-        <nav class=" d-flex justify-content-around align-items-center size-header bg-header">
+        <nav class=" d-flex justify-content-around align-items-center size-header bg-dark">
             <div class="image-header">
-                <a href="../index.html"><img class="image-header" src="../img/logobis1.png" alt="Logo de Oriphoto"></a>
+                <a href="../index.html" id="nav-link"><img class="image-header" src="../img/logobis1.png"
+                        alt="Logo de Oriphoto"></a>
             </div>
             <div>
-                <a id="nav-link" class="font-navlink" href="../index.html">Accueil</a>
+                <a class="font-navlink" id="nav-back" href="../index.html">Accueil</a>
             </div>
         </nav>
     </header>
+
+    <!-- Main de Oriphoto -->
+
     <main class="d-flex flex-column align-items-center">
-        <div class="title-page mt-5">
-            <h1 class="text-center p-5">Récapitulatif de vôtre panier</h1>
+
+        <!-- Titre de la Page -->
+
+        <div class="mt-5">
+            <h1 class="text-center p-5 text-uppercase title-page">Récapitulatif de vôtre
+                Commande
+            </h1>
         </div>
-        <section class="container m-5">
-            <div class=" row section-order  p-5">
-                <p class="section-p"> <span id="order-firstname"></span>, merci d'avoir commandé sur notre
-                    site.<br> La
+
+        <!-- Récapitulatif de la commande -->
+
+        <section class="container m-5 w-100 h-100 bg-white">
+            <div class=" row border border-dark p-5">
+                <p class="fw-normal fs-3"> <span id="order-firstname" class="text-danger fw-bold"></span>, merci d'avoir
+                    commandé sur notre
+                    site.<br> Le prix total de votre commande est de <span id="order-pricetotal"
+                        class="text-danger fw-bold"></span><br> La
                     référence
-                    de votre commande <span id="product-id"></span>,<br>
+                    de votre commande <span id="product-id" class="text-danger fw-bold"></span>,<br>
                     vous a été envoyé à votre
-                    adresse e-mail: <span id="order-mail"></span>.</p>
+                    adresse e-mail: <span id="order-mail" class="text-danger fw-bold"></span>.</p>
                 <div class="details ">
-                    <ul class="details-order">Détails de votre Facture:</ul>
-                    <li><span id="order-firstname2"></span> <span id="order-lastname"></span><br></li>
-                    <li><span id="order-address"></span></li>
-                    <li><span id="order-city"></span></li>
+                    <ul class="fs-3 text-center fw-bold">Détails de votre Facture:</ul>
+                    <li class="fs-4 text-center"><span id="order-firstname2" class="text-danger fw-bold"></span> <span
+                            id="order-lastname" class="text-danger fw-bold"></span><br></li>
+                    <li class="fs-4 text-center"><span id="order-address" class="text-danger fw-bold"></span></li>
+                    <li class="fs-4 text-center"><span id="order-city" class="text-danger fw-bold"></span></li>
                     <div><button id="order-print" class="btn btn-outline-dark btn-lg">Imprimer</button></div>
                 </div>
 
         </section>
     </main>
 
-
+    <!-- Footer sur Oriphoto -->
 
     <footer>
-        <div class="footer d-flex flex-row justify-content-center align-items-center bg-footer">
-            <div class="d-flex justify-content-center align-items-center icones">
-                <a href="#" aria-label="icône pour instagram"><i class="fab fa-instagram icon-footer"></i></a>
-                <a href="#" aria-label="icône pour twitter"><i class="fab fa-twitter icon-footer"></i></a>
-                <a href="#" aria-label="icône pour facebook"><i class="fab fa-facebook-square icon-footer"></i></a>
+        <div class="footer d-flex flex-row justify-content-center align-items-center bg-dark">
+            <div class="d-flex justify-content-center align-items-center flex-grow-1">
+                <a href="#" aria-label="icône pour instagram"><i class="fab fa-instagram fs-1 m-4 color"></i></a>
+                <a href="#" aria-label="icône pour twitter"><i class="fab fa-twitter fs-1 m-4 color "></i></a>
+                <a href="#" aria-label="icône pour facebook"><i class="fab fa-facebook-square fs-1 m-4 color"></i></a>
             </div>
-            <div class="contact"><a class="contacts" href="mailto:maximepaupy@gmail.com">Contact</a></div>
+            <div class="mx-5"><a class="color" href="mailto:maximepaupy@gmail.com">Contact</a></div>
         </div>
     </footer>
+
     <script src="../js/function.js" defer></script>
     <script src="../js/confirmation.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
