@@ -21,7 +21,7 @@ commande, et indiquant le prix total et l'identifiant de commande envoyé
 par le serveur</li>
 </ul>
 
-<h2>Produits présentés</h2>
+<h2>Produits à présentés</h2>
 
 <p>Dans un premier temps, une seule catégorie de produits sera présentée.
 </p>
