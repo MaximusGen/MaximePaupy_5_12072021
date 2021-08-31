@@ -42,3 +42,6 @@ par le serveur</li>
   <li>T#5-p5-Réaliser la page de confirmation de commande;</li>
   <li>T#6-p5-Réaliser un plan de test;</li>
 </ul>
+
+<h2>Ouvrir l'application</h2>
+<p></p>
