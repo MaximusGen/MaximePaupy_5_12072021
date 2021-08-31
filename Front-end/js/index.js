@@ -1,3 +1,5 @@
+basketPreview();
+
 main();
 
 async function main() {
@@ -35,5 +37,3 @@ function displayArticle(article) {
 
   document.getElementById("produits").appendChild(cloneElt);
 }
-
-basketPreview();

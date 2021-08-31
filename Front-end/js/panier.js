@@ -1,7 +1,9 @@
+basketPreview();
+
 // Afficher les produits dans le panier \\
+
 displayArticle();
 
-basketPreview();
 // Supprimer un produit dans le panier \\
 
 function deleteProduct() {

@@ -9,6 +9,8 @@ const orderCity = document.getElementById("order-city");
 const orderMail = document.getElementById("order-mail");
 const orderPrice = document.getElementById("order-pricetotal");
 
+// Affiche les informations sur la page \\
+
 function displayId() {
   idOrder.innerText = `${order.orderId}`;
   orderfirstName.innerText = `${order.contact.firstName}`;

@@ -57,12 +57,19 @@ p {
 }
 
 .span-preview {
-  font-size: 1.4rem;
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  line-height: 30px;
+  border-radius: 50%;
   background-color: #ffd700;
   color: #353535;
+  text-align: center;
 }
 
-/***************** CAROUSEL PAGE INDEX *****************/
+/***************** MAIN *****************/
+
+/**** CAROUSEL PAGE INDEX ****/
 
 .shadow {
   color: #fff;
@@ -70,15 +77,72 @@ p {
   text-shadow: #000 3px 3px 3px;
 }
 
-/***************** MAIN *****************/
-
 .title-page {
   font-family: "Retro", sans-serif;
   border-top: 1px #000 solid;
   border-bottom: 1px #000 solid;
 }
 
-/***************** MAIN PAGE CONFIRMATION *****************/
+/****** RESPONSIVE PAGE PANIER ******/
+
+@media (max-width: 390px) {
+  .span-preview {
+    margin-left: 2rem;
+  }
+
+  /**** RESPONSIVE TABLEAU MOBILE ****/
+
+  .responsive-table-line td:before {
+    content: attr(data-title);
+  }
+
+  .margin-card {
+    margin-top: 2rem;
+  }
+
+  .responsive-table-line table,
+  .responsive-table-line thead,
+  .responsive-table-line tfoot,
+  .responsive-table-line tbody,
+  .responsive-table-line th,
+  .responsive-table-line td,
+  .responsive-table-line tr {
+    display: block;
+  }
+
+  .responsive-table-line thead tr {
+    display: none;
+  }
+
+  .responsive-table-line td {
+    position: relative;
+    border: 0px solid transparent;
+    white-space: normal;
+    text-align: right;
+  }
+
+  .responsive-table-line img {
+    width: 500px;
+    margin-left: 12rem;
+  }
+
+  .responsive-table-line td:before {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 50%;
+    padding-right: 15px;
+    height: 100%;
+    text-align: left;
+    padding: 2px;
+  }
+
+  #clearBasket {
+    margin: 0 4rem;
+  }
+}
+
+/**** MAIN PAGE CONFIRMATION ****/
 
 li {
   list-style: none;
