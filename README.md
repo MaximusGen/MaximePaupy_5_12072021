@@ -26,12 +26,50 @@ par le serveur</li>
 <p>Dans un premier temps, une seule catégorie de produits sera présentée.
 </p>
 <ul>
-   <li>Ours en peluche faits à la main ;
+   <li>Ours en peluche faits à la main (produit choisi) ;
 </li>
    <li>Caméras vintage ;
 </li>
    <li>meubles en chêne</li>
 </ul>
+
+<h2>Réaliser un plan de test</h2>
+
+<p>Planifiez une suite de tests unitaires pour couvrir au minimum 80 % de la base de
+code pour le front-end. Vous devrez formaliser un plan pour atteindre ce résultat,
+sans obligation d’écrire ces tests Expliquez quelles lignes seront testées, et quels
+“test cases” seront envisagés.</p>
+
+<h2>Informations complémentaires
+</h2>
+
+<p>Pour le MVP, la personnalisation du produit ne sera pas fonctionnelle : la page
+contenant un seul article aura un menu déroulant permettant à l'utilisateur de
+choisir une option de personnalisation, mais celle-ci ne sera ni envoyée au serveur
+ni reflétée dans la réponse du serveur.<br>
+Le code source devra être indenté et utiliser des commentaires. Il devra
+également utiliser des fonctions globales.<br>
+Concernant l’API, des promesses devront être utilisées pour éviter les rappels.
+Les inputs des utilisateurs doivent être validés avant l’envoi à l’API.</p>
+
+<h2>Technologies utilisées</h2>
+
+<p>HTML, CSS, JavaScript.</p>
+
+<h2>URL des API</h2>
+
+<ul>
+  <li>Ours en peluche faits à la main : http://localhost:3000/api/teddies</li>
+  <li>Caméras vintage : http://localhost:3000/api/cameras</li>
+  <li>Meubles en chêne : http://localhost:3000/api/furniture</li>
+</ul>
+
+<h2>Les Inputs</h2>
+
+<p>Pour les routes POST, l’objet contact envoyé au serveur doit contenir les champs
+firstName, lastName, address, city et email. Le tableau des produits envoyé au
+backend doit être un array de strings products. Les types de ces champs et leur
+présence doivent être validés avant l’envoi des données au serveur.</p>
 
 <h2>Tâche à effectuer</h2>
 <ul>
@@ -44,6 +82,7 @@ par le serveur</li>
 </ul>
 
 <h2>Ouvrir l'application</h2>
+
 <p>Dans le terminal de l'éditeur de code, tapez:</p>
 <ul>
 <li>cd back-end</li>
