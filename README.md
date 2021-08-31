@@ -44,4 +44,6 @@ par le serveur</li>
 </ul>
 
 <h2>Ouvrir l'application</h2>
-<p></p>
+<p>Dans le terminal de l'éditeur de code, tapez</p>
+<li>cd back-end</li>
+<li>node server</li>
