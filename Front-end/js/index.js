@@ -11,7 +11,7 @@ async function main() {
 }
 
 function getArticles() {
-  return fetch("http://localhost:3000/api/cameras")
+  return fetch(url)
     .then(function (response) {
       return response.json();
     })

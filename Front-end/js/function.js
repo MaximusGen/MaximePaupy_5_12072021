@@ -34,14 +34,13 @@ function displayTotalPrice() {
 
 // Remplir le tableau de la page panier \\
 
-function displayArticle() {
+function displayArticleBasket() {
   for (let i = 0; i < basket.length; i++) {
     const productsBasket = document.getElementById("productsBasket");
-    const basketindex = basket.indexOf(basket);
 
     productsBasket.innerHTML += `
     
-        <tr class="text-center margin-card">
+    <tr class="text-center margin-card">
         <td class="w-25 fs-5 fw-bold " data-title="Produit">
             <img src="${
               basket[i].image

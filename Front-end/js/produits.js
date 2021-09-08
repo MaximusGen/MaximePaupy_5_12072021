@@ -11,7 +11,7 @@ const id = getArticleId();
 
 (async function () {
   getArticleId();
-  const article = await getArticles(id);
+  const article = await getArticlesById(id);
   hydrateArticle(article);
   basketAdd(article);
 })();
@@ -20,13 +20,13 @@ function getArticleId() {
   return new URL(document.location).searchParams.get("id");
 }
 
-async function getArticles(id) {
-  return fetch(`http://localhost:3000/api/cameras/${id}`)
+async function getArticlesById(id) {
+  return fetch(`${url}/${id}`)
     .then(function (response) {
       return response.json();
     })
-    .then(function (articles) {
-      return articles;
+    .then(function (article) {
+      return article;
     })
     .catch(function (error) {
       alert("Une erreur est survenue");

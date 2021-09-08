@@ -2,7 +2,7 @@ basketPreview();
 
 // Afficher les produits dans le panier \\
 
-displayArticle();
+displayArticleBasket();
 
 // Supprimer un produit dans le panier \\
 
@@ -36,11 +36,13 @@ btnclearBasket.addEventListener("click", () => {
 // Validation du formulaire et Post du formulaire \\
 
 const btnorder = document.getElementById("postbtn");
-const regexName = /^(([a-zA-ZÀ-ÿ]+[\s\-]{1}[a-zA-ZÀ-ÿ]+)|([a-zA-ZÀ-ÿ]+))$/;
-const regexCity =
-  /^(([a-zA-ZÀ-ÿ]+[\s\-]{1}[a-zA-ZÀ-ÿ]+)|([a-zA-ZÀ-ÿ]+)){1,10}$/;
-const regexMail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]{2,}\.[a-z]{2,4}$/;
-const regexAddress = /^(([a-zA-ZÀ-ÿ0-9]+[\s\-]{1}[a-zA-ZÀ-ÿ0-9]+)){1,10}$/;
+const nameRegex =
+  /^[a-zàâäéèêëîïôöùûüÿçæœA-ZÀÂÄÉÈÊËÎÏÔÖÙÛÜŸÇÆ]{1,}[a-zàâäéèêëîïôöùûüÿçæœA-ZÀÂÄÉÈÊËÎÏÔÖÙÛÜŸÇÆ .'-]*$/;
+const addressRegex =
+  /[0-9a-zàâäéèêëîïôöùûüÿçæœA-ZÀÂÄÉÈÊËÎÏÔÖÙÛÜŸÇÆ]{1,}[a-zàâäéèêëîïôöùûüÿçæœA-ZÀÂÄÉÈÊËÎÏÔÖÙÛÜŸÇÆ ,.'-/]*$/;
+const cityRegex =
+  /^[a-zàâäéèêëîïôöùûüÿçæœA-ZÀÂÄÉÈÊËÎÏÔÖÙÛÜŸÇÆ]{1,}[a-zàâäéèêëîïôöùûüÿçæœA-ZÀÂÄÉÈÊËÎÏÔÖÙÛÜŸÇÆ'-]*$/;
+const emailRegex = /([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}$/;
 const checkbox = document.getElementById("checkbox");
 
 btnorder.addEventListener("click", (e) => {
@@ -48,20 +50,23 @@ btnorder.addEventListener("click", (e) => {
   validForm();
 });
 
+// Validation du formulaire \\
+
 function validForm() {
   if (
-    (regexName.test(document.getElementById("firstname").value) == false) &
-    (regexName.test(document.getElementById("lastname").value) == false) &
-    (regexAddress.test(document.getElementById("address").value) == false) &
-    (regexCity.test(document.getElementById("city").value) == false) &
-    (regexName.test(document.getElementById("mail").value) == false) &
-    (checkbox.checked == false)
+    nameRegex.test(document.getElementById("firstname").value) !== true ||
+    nameRegex.test(document.getElementById("lastname").value) !== true ||
+    addressRegex.test(document.getElementById("address").value) !== true ||
+    cityRegex.test(document.getElementById("city").value) !== true ||
+    emailRegex.test(document.getElementById("mail").value) !== true
   ) {
     alert("Veuillez remplir le formulaire");
   } else {
     sendOrder();
   }
 }
+
+// Envoie du POST pour la confirmation de commande \\
 
 function sendOrder() {
   let contacts = {
@@ -89,7 +94,7 @@ function sendOrder() {
     .then((response) => response.json())
     .then((data) => {
       localStorage.setItem("orderId", JSON.stringify(data));
-      window.location.href = "confirmation.html";
+      window.location.href = "./confirmation.html";
     })
     .catch((error) => {
       alert("Fatal erreur : " + error);
