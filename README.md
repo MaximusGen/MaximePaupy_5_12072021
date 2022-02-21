@@ -1,5 +1,6 @@
-# Projet 5 - OpenClassrooms " Orinoco" 
+# Orinoco 
 
+## Contexte:
 <h2>Objectifs</h2>
 
 <p>Créez 4 pages pour une application d'un site e-commerce français<p>
@@ -21,70 +22,56 @@ commande, et indiquant le prix total et l'identifiant de commande envoyé
 par le serveur</li>
 </ul>
 
-<h2>Produits à présentés</h2>
+### Technologies utilisée
 
-<p>Dans un premier temps, une seule catégorie de produits sera présentée.
+**Editeur**: Vs-Code ;
+
+**Langages**:
+<p align="center">
+<img alt="HTML" src="https://img.shields.io/badge/HTML-E34F26?logo=html5&logoColor=white&style=for-the-badge" />
+<img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=white&style=for-the-badge" />
+<img alt="Css" src="https://img.shields.io/badge/CSS-1572B6?logo=css3&logoColor=white&style=for-the-badge" />
 </p>
-<ul>
-   <li>Ours en peluche faits à la main (produit choisi) ;
-</li>
-   <li>Caméras vintage ;
-</li>
-   <li>meubles en chêne</li>
-</ul>
 
-<h2>Réaliser un plan de test</h2>
+### Briefing + Maquette
 
-<p>Planifiez une suite de tests unitaires pour couvrir au minimum 80 % de la base de
-code pour le front-end. Vous devrez formaliser un plan pour atteindre ce résultat,
-sans obligation d’écrire ces tests Expliquez quelles lignes seront testées, et quels
-“test cases” seront envisagés.</p>
+[P5_Spécifications+fonctionnelles+Orinoco.pdf](https://github.com/MaximusGen/MaximePaupy_5_12072021/files/8109525/P5_Specifications%2Bfonctionnelles%2BOrinoco.pdf)
 
-<h2>Informations complémentaires
-</h2>
-
-<p>Pour le MVP, la personnalisation du produit ne sera pas fonctionnelle : la page
-contenant un seul article aura un menu déroulant permettant à l'utilisateur de
-choisir une option de personnalisation, mais celle-ci ne sera ni envoyée au serveur
-ni reflétée dans la réponse du serveur.<br>
-Le code source devra être indenté et utiliser des commentaires. Il devra
-également utiliser des fonctions globales.<br>
-Concernant l’API, des promesses devront être utilisées pour éviter les rappels.
-Les inputs des utilisateurs doivent être validés avant l’envoi à l’API.</p>
-
-<h2>Technologies utilisées</h2>
-
-<p>HTML, CSS, JavaScript.</p>
-
-<h2>URL des API</h2>
+   
+### Installation
 
 <ul>
-  <li>Ours en peluche faits à la main : http://localhost:3000/api/teddies</li>
-  <li>Caméras vintage : http://localhost:3000/api/cameras</li>
-  <li>Meubles en chêne : http://localhost:3000/api/furniture</li>
+   <li>Cloner le projet avec git clone dans un dossier</li>
+   <li>Lancer votre éditeur de code</li>
+   <li>Ouvrer le terminal (cd back-end puis npm install) </li>
+   <li>Pour activer le back-end, taper node server</li>
+   <li>Pour le front-end, ouvrer avec OpenLiveServer le fichier index.html</li>
 </ul>
 
-<h2>Les Inputs</h2>
 
-<p>Pour les routes POST, l’objet contact envoyé au serveur doit contenir les champs
-firstName, lastName, address, city et email. Le tableau des produits envoyé au
-backend doit être un array de strings products. Les types de ces champs et leur
-présence doivent être validés avant l’envoi des données au serveur.</p>
+### Réseaux
 
-<h2>Tâche à effectuer</h2>
-<ul>
-  <li>T#1-p5-Réaliser le croquis des 4pages;</li>
-  <li>T#2-p5-Réaliser la page menue article;</li>
-  <li>T#3-p5-Réaliser la page produit;</li>
-  <li>T#4-p5-Réaliser la page panier;</li>
-  <li>T#5-p5-Réaliser la page de confirmation de commande;</li>
-  <li>T#6-p5-Réaliser un plan de test;</li>
-</ul>
+<p align="center">
+    
+<a href="https://www.linkedin.com/in/maxime-paupy/">
+  <img
+    alt="Linkedin"
+    src="https://img.shields.io/badge/linkedin-0077B5?logo=linkedin&logoColor=white&style=for-the-badge"
+  />
+</a>
 
-<h2>Ouvrir l'application</h2>
+<a href="https://www.instagram.com/maximusgen___/">
+  <img
+    alt="Instagram"
+    src="https://img.shields.io/badge/Instagram-E4405F?logo=instagram&logoColor=white&style=for-the-badge"
+  />
+    
+<a href="https://www.facebook.com/MaxZaraPaupy">
+  <img
+    alt="Facebook"
+    src="https://img.shields.io/badge/Facebook-1877F2?logo=facebook&logoColor=white&style=for-the-badge"
+  />
+</a>
+    
+</p>
 
-<p>Dans le terminal de l'éditeur de code, tapez:</p>
-<ul>
-<li>cd back-end</li>
-<li>node server</li>
-</ul>
