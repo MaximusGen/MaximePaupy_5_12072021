@@ -1,7 +1,6 @@
 # Orinoco 
 
-## Contexte:
-<h2>Objectifs</h2>
+## Objectifs:
 
 <p>Créez 4 pages pour une application d'un site e-commerce français<p>
   
